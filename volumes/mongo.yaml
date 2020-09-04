@@ -1,36 +1,44 @@
-apiVersion: app/v1 
-kind: Deployment 
+apiVersion: app/v1
+kind: Deployment
 metadata:
-    name: mongo-depl 
-spec: 
-    replicas: 1 
-    selector: 
-        matchLabels: 
-            app: mongo 
-    template: 
-        metadata: 
+    name: mongo-depl
+spec:
+    replicas: 1
+    selector:
+        matchLabels:
+            app: mongo
+    template:
+        metadata:
             labels: 
-                app: mongo 
-        spec: 
-            containers: 
-                - name: mongo 
+                app: mongo
+        spec:
+            # make use of pvc to create volume
+            volumes: 
+                - name: mongo-volume 
+                  persistentVolumeClaim: 
+                    # mentioned in the mongo-pvc config 
+                    claimName: mongo-pvc 
+            containers:
+                - name: mongo
                   image: mongo
-                  ports: 
+                  ports:
                     - containerPort: 27017
+                  volumeMounts: 
+                    # same as volumes name mentioned above 
+                    - name: mongo-volume 
+                      # default storage location for mongodb
+                      mountPath: /data/db 
 ---
-apiVersion: v1 
-kind: Service 
-metadata: 
-    name: mongo-srv 
-spec: 
-    type: ClusterIP 
-    selector: 
-        app: mongo 
-    ports: 
-        - name: mongo 
-          protocol: TCP 
+apiVersion: v1
+kind: Service
+metadata:
+    name: mongo-srv
+spec:
+    type: ClusterIP
+    selector:
+        app: mongo
+    ports:
+        - name: mongo
+          protocol: TCP
           port: 27017
           targetPort: 27017
-
-
-
