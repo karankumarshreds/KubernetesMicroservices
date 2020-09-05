@@ -1,4 +1,4 @@
-apiVersion: app/v1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
     name: mongo-depl
@@ -18,6 +18,9 @@ spec:
                   persistentVolumeClaim: 
                     # mentioned in the mongo-pvc config 
                     claimName: mongo-pvc 
+                #   hostPath: 
+                #     path: "E:/Linux/mongo"
+                #     type: DirectoryOrCreate
             containers:
                 - name: mongo
                   image: mongo
@@ -34,7 +37,7 @@ kind: Service
 metadata:
     name: mongo-srv
 spec:
-    type: ClusterIP
+    type: NodePort
     selector:
         app: mongo
     ports:
