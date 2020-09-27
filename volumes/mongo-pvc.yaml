@@ -3,10 +3,11 @@ kind: PersistentVolumeClaim
 metadata: 
   name: mongo-pvc 
 spec: 
+  storageClassName: manual 
   accessModes: 
     # the storage (say our node) have to have
     # storage option that provides following permissions
     - ReadWriteOnce
   resources: 
     requests: 
-      storage: 1Gi
+      storage: 0.5Gi

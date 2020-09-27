@@ -18,14 +18,12 @@ spec:
                   persistentVolumeClaim: 
                     # mentioned in the mongo-pvc config 
                     claimName: mongo-pvc 
-                #   hostPath: 
-                #     path: "E:/Linux/mongo"
-                #     type: DirectoryOrCreate
             containers:
                 - name: mongo
-                  image: mongo
+                  image: mongo:3.6.5-jessie 
                   ports:
-                    - containerPort: 27017
+                    - name: mongo 
+                      containerPort: 27017
                   volumeMounts: 
                     # same as volumes name mentioned above 
                     - name: mongo-volume 

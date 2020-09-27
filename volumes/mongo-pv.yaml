@@ -1,0 +1,16 @@
+# pre configured persistent volume for PVC to use
+# if this is not created, PVC will create one on the fly
+apiVersion: v1 
+kind: PersistentVolume 
+metadata: 
+  name: mongo-pv 
+  labels: 
+    type: local 
+spec: 
+  storageClassName: manual 
+  capacity: 
+    storage: 1Gi 
+  accessModes: 
+    - ReadWriteOnce
+  hostPath: 
+    path: "E:\\Linux\\mongo"
