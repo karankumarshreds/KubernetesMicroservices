@@ -20,6 +20,8 @@ https://github.com/helm/charts/tree/master/stable
 
 example: 
 
-```bash
-$ helm install stable/mysql --name sql-installation --set mysqlPassword=password
+```shell
+$ helm install stable/mysql --name sql-installation
+$ helm ls ## to list installed packages
+$ helm delete sql-installtion
 ```
