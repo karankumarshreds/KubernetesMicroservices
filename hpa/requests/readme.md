@@ -37,5 +37,13 @@ containers:
       resources: 
         # defines initial request of resource for pod to run
         requests: 
-          memory: 300Mi # 1Mi = 1024Ki 1M = 1000K
+          memory: 300Mi  # 1Mi = 1024Ki 1M = 1000K
+          cpu: 100m      # 0.1 cpu = 100m, 1/10th of the 1cpu
 ```
+To check the resource of your node, run the following command and check the ```capacity``` block from the output.
+
+```bash
+$ kubectl get nodes 
+$ kubectl describe node pool-8xrdtbleu-3al2x
+```
+
