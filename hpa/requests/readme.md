@@ -28,3 +28,14 @@ In this deployment, we can make use of something called ***resource request***.
 
 Let us *assume* that the pod in the above deployment needs around ```300 mb``` ram to run comfortably without crashing. 
 
+In order to set it up, in the ```container``` block in your ```deployment``` config, add a ```resources``` block: 
+
+```yaml
+containers: 
+    - name: client 
+      image: karanshreds/client
+      resources: 
+        # defines initial request of resource for pod to run
+        requests: 
+          memory: 300Mi # 1Mi = 1024Ki 1M = 1000K
+```

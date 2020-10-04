@@ -4,7 +4,7 @@ The Horizontal Pod Autoscaler automatically scales the number of Pods in a repli
 
 ### How does the Horizontal Pod Autoscaler work? 
 
-<p align="center"><img src="https://d33wubrfki0l68.cloudfront.net/4fe1ef7265a93f5f564bd3fbb0269ebd10b73b4e/1775d/images/docs/horizontal-pod-autoscaler.svg" width="400"/></p>
+<p align="center"><img src="https://github.com/karankumarshreds/KubernetesMicroservices/blob/master/img/hpa.PNG" width="500"/></p>
 
 The Horizontal Pod Autoscaler is implemented as a control loop, with a period controlled by the ***controller manager's*** ```--horizontal-pod-autoscaler-sync-period flag``` (with a default value of 15 seconds).
 
