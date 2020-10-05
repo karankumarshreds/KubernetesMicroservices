@@ -49,5 +49,29 @@ Here, the percentage is of the "request" of the container. Suppose the container
 
 If the autoscaler starts scaling up, it needs to know *how much resource (cpu)* does the pod actually needs. So depending on the amount of the *resources left on the node* will the autoscaler scale up. If there are no resources left on the node, autoscaler will stop autoscaling at that point.
 
+You can also configure autoscaling through a config file : 
 
+```yaml
+apiVersion: apps/v1beta1 # autoscaling/v1 
+kind: HorizontalPodAutoscaler 
+metadata: 
+  name: client-hpa 
+  namespace: default 
+spec: 
+  maxReplicas: 4 
+  minReplicas: 1 
+  scaleTargetRef: 
+    # apiVersion: apps/v1beta1
+    apiVersion: apps/v1
+    kind: Deployment 
+    name: client-depl
+  targetCPUUtilizationPercentage: 400
+```
+
+Now apply this HPA config and check the result:
+
+```
+$ kubectl create -f <config>.yaml
+$ kubectl get hpa 
+```
 
