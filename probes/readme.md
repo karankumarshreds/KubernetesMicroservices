@@ -2,7 +2,7 @@
 
 <p align="center"><img src="https://github.com/karankumarshreds/KubernetesMicroservices/blob/master/img/probes.PNG"/></p>
 
-## Readiness Probes
+## Readiness Probes (mostly used)
 
 Suppose the horizontal pod autoscaler kicks in as soon as there is high load on the running pod.
 <br />
@@ -14,6 +14,34 @@ from the BROWSER or an APP.
 
 So we need some sort of mechanism to add a `delay` before the pod is considered to be **ready**.
 This is done via **Readiness Probes**
+
+Configuration:
+
+In your deployment configuration, inside the containers block:
+
+```yaml
+readinessProbe:
+  exec:
+    command:
+      - cat
+      - /tmp/healthy
+  initialDelaySeconds: 5 ## waits 5 seconds first time
+  periodSeconds: 5 ## sends requests in periods
+```
+
+This will run the command and mark it ready as soon as it runs successfully.
+
+**BETTER WAY OF DOING APPLICATION LEVEL TEST**
+
+```yaml
+# send an internal request to the application
+readinessProbe:
+  httpGet:
+    path: /api/currentuser
+    port: 3000
+  initialDelaySeconds: 10
+  periodSeconds: 5
+```
 
 ## Liveliness Probes
 
