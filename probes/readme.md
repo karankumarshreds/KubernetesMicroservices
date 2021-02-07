@@ -21,4 +21,4 @@ Here, we use `liveliness probe`, which helps us to catch **such deadlocks** in t
 
 This will _not hinder the application despite the bugs_ by at least making it available for the other users.
 
-<p align="center"><img src="https://github.com/karankumarshreds/KubernetesMicroservices/blob/master/img/probes.PNG" width="500"/></p>
+<p align="center"><img src="https://github.com/karankumarshreds/KubernetesMicroservices/blob/master/img/probes.PNG"/></p>
