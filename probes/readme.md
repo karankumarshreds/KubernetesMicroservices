@@ -20,3 +20,5 @@ Suppose your container is stuck while processing a request from the client. Ther
 Here, we use `liveliness probe`, which helps us to catch **such deadlocks** in the application. We can use these to restart the pod to kill the hung process and make it available for other requests.
 
 This will _not hinder the application despite the bugs_ by at least making it available for the other users.
+
+<p align="center"><img src="https://github.com/karankumarshreds/KubernetesMicroservices/blob/master/img/probes.PNG" width="500"/></p>
