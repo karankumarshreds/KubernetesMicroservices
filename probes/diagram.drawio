@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-02-07T16:29:31.700Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.146 Safari/537.36" etag="43rbMd0CmbQmfm-HVMAH" version="14.2.7" type="github">
+<mxfile host="app.diagrams.net" modified="2021-02-07T16:54:44.694Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.146 Safari/537.36" etag="8VC7la7bgRaDO86UIby8" version="14.2.7" type="github">
   <diagram id="gzbfFNM49mtrdIT9MxgC" name="Page-1">
     <mxGraphModel dx="981" dy="548" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -30,6 +30,9 @@
         </mxCell>
         <mxCell id="i94SGuSQBCYqXOLezEa3-12" value="&lt;b&gt;The pod is removed from Service (loadbalancer) until it is ready&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="320" y="360" width="230" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="i94SGuSQBCYqXOLezEa3-13" value="&lt;b&gt;Keeps sending request continuously to monitor the health of you pod&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="90" y="400" width="230" height="40" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
