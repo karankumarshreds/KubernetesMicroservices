@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-02-07T16:55:04.686Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.146 Safari/537.36" etag="1ZzJUlHHsIe5SrLUIkbh" version="14.2.7" type="github">
+<mxfile host="app.diagrams.net" modified="2021-02-07T17:00:59.852Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.146 Safari/537.36" etag="cQswurmZex9tgwIpgZHm" version="14.2.7" type="github">
   <diagram id="gzbfFNM49mtrdIT9MxgC" name="Page-1">
     <mxGraphModel dx="981" dy="548" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -36,6 +36,12 @@
         </mxCell>
         <mxCell id="i94SGuSQBCYqXOLezEa3-14" value="&lt;b&gt;Not usually used&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="90" y="440" width="230" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="i94SGuSQBCYqXOLezEa3-15" value="&lt;b&gt;Usually this alone does the job&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="320" y="440" width="230" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="i94SGuSQBCYqXOLezEa3-16" value="&lt;b&gt;We send a mock request/command to see if the container responds&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="320" y="400" width="230" height="40" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
