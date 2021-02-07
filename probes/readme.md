@@ -1,5 +1,7 @@
 # Liveness, Readiness and Startup Probes
 
+<p align="center"><img src="https://github.com/karankumarshreds/KubernetesMicroservices/blob/master/img/probes.PNG"/></p>
+
 ## Readiness Probes
 
 Suppose the horizontal pod autoscaler kicks in as soon as there is high load on the running pod.
@@ -21,4 +23,9 @@ Here, we use `liveliness probe`, which helps us to catch **such deadlocks** in t
 
 This will _not hinder the application despite the bugs_ by at least making it available for the other users.
 
-<p align="center"><img src="https://github.com/karankumarshreds/KubernetesMicroservices/blob/master/img/probes.PNG"/></p>
+## Startup Probes
+
+As the name suggests, the kubelet uses startup probes **to know when the application has started**.
+<br />
+It disables liveness and readiness checks until it succeeds, making sure those probes don't interfere with the application startup.
+This means that **liveliness probe would NOT interfere and tell kubelet to restart the pod until the check for startup probe has been completed**
