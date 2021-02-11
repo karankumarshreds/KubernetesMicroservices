@@ -84,3 +84,22 @@ containers:
           memory: 500Mi # kills and restarts the container if reaches limit 
           cpu: 170m     # forces the container to not request for more cpu if reaches limit 
 ```
+
+# Quality of Service (QoS)
+
+Depending on how the request and limits are assigned to a pod, it defines its quality of service.
+
+Let us see 3 cases in order to understand this better: 
+
+1. **Best Effort**: Request/Limits not defined: 
+
+Such pods have lowest priority and are the first one to be killed in case of the resource crunch.
+
+2. **Burstable**: Request - Limits difference is large: 
+
+In case there is large difference between the request for a pod and the limits of the pod, then that pods are killed 
+after the BestEffort pods are killed. Because these are the pods that *can consume the most resources after BestEffort pods* because of the huge difference.
+
+
+
+
