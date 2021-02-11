@@ -100,7 +100,7 @@ Such pods have lowest priority and are the first one to be killed in case of the
 In case there is large difference between the request for a pod and the limits of the pod, then that pods are killed 
 after the BestEffort pods are killed. Because these are the pods that *can consume the most resources after BestEffort pods* because of the huge difference.
 
-2. **Guranteed**: Request - Limits difference is minimum/0: 
+3. **Guranteed**: Request - Limits difference is minimum/0: 
 
 These pods have the highest priority and are the last ones to be killed in case there is resource crunch on the nodes.
 
