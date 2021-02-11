@@ -57,10 +57,15 @@ It has nothing to do with HPA.
 
 - *memory limit* : kills and restarts the container if reaches limit 
 
+This is because ```memory``` is incompressible (it is not released back to the node once consumed). So there is no other way of releasing the memory back to the server.
+**Hence**, the pod is killed.
+
 Status that it gives when you ```describe``` that pod : **OOMKilled** << OutOfMemoryKilled
 
 - *cpu limit* : forces the container to not request for more cpu if reaches limit 
 
+This is because ```cpu``` is compressible (resources will be released back to node if container is throttled by k8s). 
+**Hence**, the pod is ```throttled``` temporarily and then unthrottled as soon as it is back to normal state.
 
 In order to set it up, in the ```container``` block in your ```deployment``` config, add a ```resources``` block: 
 
