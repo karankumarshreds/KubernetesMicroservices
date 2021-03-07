@@ -5,6 +5,7 @@ Ideal way of performing a rolling update it the `declarative approach`.
 Consider the following example:
 
 ```yml
+# ** random-depl.yaml **
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -33,6 +34,14 @@ spec:
               exec:
                 command: ['stat', '/some_script']
 ```
+
+**To trigger the update**:
+
+> kubectl patch -f random-depl.yaml
+
+**To force the update:**
+
+> kubeclt replace -f random-depl.yaml
 
 **Explanation**:
 
