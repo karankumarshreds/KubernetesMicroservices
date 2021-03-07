@@ -15,8 +15,8 @@ spec:
   strategy:
     type: RollingUpdate
     rollingUpdate:
-      maxSurge: 1 # <A>
-      maxUnavailable: 1 # <B>
+      maxSurge: 1 # ==> A
+      maxUnavailable: 1 # ==> B
     selector:
       matchLabels:
         app: random
@@ -29,10 +29,18 @@ spec:
         containers:
           - image: nginx
             name: nginx
-            readinessProbe: # <C>
+            readinessProbe: # ==> C
               exec:
                 command: ['stat', '/some_script']
 ```
+
+**Explanation**:
+
+- **A**: The number of _extra_ pods that can run temporarily to perform the rolling update. This means, in our example, _one new pod will be made, and one pod will be killed post that, which means maximum **4 pods** can run at a time_.
+
+- **B**: Out of the 3 old pods, how many can be unavailable at a time during the rollout. It means, it will kill 1 pod at a time out of 3 to perform the update. _Means, 2 out of 3 pods will be available during the update_.
+
+- **C**: Readiness probes are very important for kubernetes SVCs to know new pods are healthy and for them to start sending the traffic to new pods.
 
 ### Watching rollout status of deployment
 
